@@ -1,0 +1,12 @@
+server:
+  port: 8700
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost/own_mysql?useUnicode=true&characterEncoding=UTF-8&rewriteBatchedStatements=true&autoReconnect=true&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8
+    username: root
+    password:
+mybatis:
+  mapper-locations: classpath:com/bjb/ms/dao/impl/*.xml
+  type-aliases-package: com.bjb.ms.entity

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bjb.ms.dao.StudentDao">
+    <resultMap id="BaseResultMap" type="com.bjb.ms.entity.Student">
+		<id column="student_name" jdbcType="VARCHAR" property="studentName" />
+	</resultMap>
+
+    <insert id="addStudent" parameterType="com.bjb.ms.entity.Student">
+        insert into student(student_name, password) values (#{studentName, jdbcType=VARCHAR}, #{password, jdbcType=VARCHAR})
+    </insert>
+
+    <select id="queryById" parameterType="java.lang.Integer" resultType="com.bjb.ms.entity.Student">
+        select * from student where id=#{id, jdbcType=INTEGER}
+    </select>
+</mapper>
